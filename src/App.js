@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { store } from "./Countries2";
+import { Provider } from "react-redux";
+import Countries from "./Countries";
+import Countries1 from "./Countries1";
+import Countries2 from "./Countries2";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Countries />
+      <Countries1 />
+      <Provider store={store}>
+        <Countries2 />
+      </Provider>
+    </>
   );
 }
 
